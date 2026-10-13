@@ -1,0 +1,16 @@
+flowchart LR
+    A["Business problem"] --> B["Data + target definition"]
+    B --> C["Data validation / preparation"]
+    C --> D["Train candidate model"]
+    D --> E["Validate and compare"]
+    E --> F{"Meets requirements?"}
+    F -- "No" --> B
+    F -- "Yes" --> G["Package model + preprocessing"]
+    G --> H["Deploy for inference"]
+    H --> I["Monitor quality, drift, cost, safety"]
+    I --> J{"Material change or failure?"}
+    J -- "Yes" --> B
+    J -- "No" --> H
+    style A fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
+    style F fill:#fef3c7,stroke:#d97706,color:#78350f
+    style I fill:#dcfce7,stroke:#16a34a,color:#14532d

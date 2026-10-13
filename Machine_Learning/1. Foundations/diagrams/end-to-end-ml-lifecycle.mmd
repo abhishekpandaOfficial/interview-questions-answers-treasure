@@ -1,0 +1,20 @@
+flowchart TD
+    A["1. Define problem + success metric"] --> B["2. Understand users, decisions, constraints"]
+    B --> C["3. Collect data + define labels"]
+    C --> D["4. Validate, profile, and document data"]
+    D --> E["5. Split data correctly"]
+    E --> F["6. Establish a baseline"]
+    F --> G["7. Build preprocessing + candidate model"]
+    G --> H["8. Validate, compare, and analyze errors"]
+    H --> I{"Performance and constraints acceptable?"}
+    I -- "No" --> J["Investigate data, framing, features, metric, assumptions"]
+    J --> C
+    I -- "Yes" --> K["9. Freeze test evaluation"]
+    K --> L["10. Package and test inference pipeline"]
+    L --> M["11. Deploy with rollback plan"]
+    M --> N["12. Monitor data, model, system, and business outcomes"]
+    N --> O["13. Review, retrain, or retire"]
+    O --> C
+    style A fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
+    style I fill:#fef3c7,stroke:#d97706,color:#78350f
+    style N fill:#dcfce7,stroke:#16a34a,color:#14532d

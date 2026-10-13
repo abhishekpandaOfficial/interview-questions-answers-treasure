@@ -1,0 +1,12 @@
+flowchart TD
+    A["Raw eligible data"] --> B["Split using a design that matches deployment"]
+    B --> C["Training data"]
+    B --> D["Validation data"]
+    B --> E["Test data: keep untouched"]
+    C --> F["Fit preprocessing + model"]
+    D --> G["Select configuration / threshold"]
+    F --> G
+    G --> H["Freeze final approach"]
+    H --> I["Evaluate once on test data"]
+    style E fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+    style I fill:#dcfce7,stroke:#16a34a,color:#14532d
